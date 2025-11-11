@@ -1,0 +1,49 @@
+{
+  "source_directory": "/tmp/moodle_backup_parsed",
+  "generated_at": "2025-11-10T16:08:17.149989",
+  "total_weeks": 8,
+  "total_activities": 37,
+  "total_resources": 0,
+  "weeks": {
+    "1": {
+      "name": "Week 1",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "2": {
+      "name": "Week 2",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "3": {
+      "name": "Week 3",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "4": {
+      "name": "Week 4",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "5": {
+      "name": "Week 5",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "6": {
+      "name": "Week 6 ",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "7": {
+      "name": "Week 7",
+      "activities_count": 5,
+      "plan_file": null
+    },
+    "8": {
+      "name": "Week 8 ",
+      "activities_count": 2,
+      "plan_file": null
+    }
+  }
+}
