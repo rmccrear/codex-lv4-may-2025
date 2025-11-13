@@ -1,12 +1,3 @@
----
-title: Server Lesson Part 4
-type: guide
-week: 1
-order: 104
-section: Week 1
-source_file: server-lesson-overview.md
----
-
 <!-- LEVEL_START -->
 
 ## Level 4: Checkpoint — Confirm Core Behavior
