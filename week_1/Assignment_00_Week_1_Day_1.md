@@ -1,13 +1,16 @@
 ---
-title: Week 1 - Day 1
+title: Build Your First Express Server
 type: assignment
 week: 1
 order: 0
 section: Week 1
 source_file: week1/assign_3958.md
+moodle_course_id: 75
+cmid: '3996'
+moodle_cmid: '3996'
 ---
 
-# Week 1 - Day 1
+# Build Your First Express Server
 
 [← Back to Week 1](README.md) / [← Course Index](../../README.md)
 

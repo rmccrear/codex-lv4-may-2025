@@ -1,17 +1,20 @@
 ---
-title: Week 1 - Day 4 Assignment (graded)
+title: RESTful Express API with CRUD Operations (graded)
 type: assignment
 week: 1
-order: 4
+order: 1
 section: Week 1
 source_file: week1/assign_3962.md
 due_date: SUN 20:00
 allow_submissions_from: SUN 20:00
 grading_due_date: SUN 20:00
 max_grade: 100
+moodle_course_id: 75
+cmid: '3997'
+moodle_cmid: '3997'
 ---
 
-# Week 1 - Day 4 Assignment (graded)
+# RESTful Express API with CRUD Operations (graded)
 
 [← Back to Week 1](README.md) / [← Course Index](../../README.md)
 

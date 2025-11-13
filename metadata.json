@@ -1,18 +1,18 @@
 {
   "source_directory": "/tmp/moodle_backup_parsed",
   "generated_at": "2025-11-10T16:08:17.149989",
-  "total_weeks": 8,
-  "total_activities": 37,
+  "total_weeks": 9,
+  "total_activities": 38,
   "total_resources": 0,
   "weeks": {
     "1": {
       "name": "Week 1",
-      "activities_count": 5,
+      "activities_count": 2,
       "plan_file": null
     },
     "2": {
       "name": "Week 2",
-      "activities_count": 5,
+      "activities_count": 2,
       "plan_file": null
     },
     "3": {
@@ -42,6 +42,11 @@
     },
     "8": {
       "name": "Week 8 ",
+      "activities_count": 2,
+      "plan_file": null
+    },
+    "9": {
+      "name": "Week 9 ",
       "activities_count": 2,
       "plan_file": null
     }

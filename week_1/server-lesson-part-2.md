@@ -33,6 +33,42 @@ Once installed, you'll use Postman to test your API endpoints throughout this pr
 
 Use `app.use(express.static('public'))` (or a directory name you prefer) so the server can return HTML, CSS, images, or other assets directly from disk. Seed the directory with a variety of files (`styles.css`, `sample.json`, `report.csv`, `logo.png`) and hit each one with your browser or Postman.
 
+Show Me: serve static assets
+
+```js
+import express from 'express';
+
+const app = express();
+
+// Serve static files from the 'public' directory
+// Files in public/ will be accessible at the root URL
+// e.g., public/styles.css → http://localhost:3000/styles.css
+app.use(express.static('public'));
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+```
+
+**Directory structure example:**
+```
+your-project/
+├── src/
+│   └── index.js
+├── public/
+│   ├── styles.css
+│   ├── sample.json
+│   ├── report.csv
+│   └── logo.png
+└── package.json
+```
+
+**Testing:**
+- Visit `http://localhost:3000/styles.css` to see the CSS file
+- Visit `http://localhost:3000/sample.json` to see the JSON file
+- Visit `http://localhost:3000/logo.png` to see the image
+
 <!-- LEVEL_START -->
 
 ## Level 2.3: Inspect MIME Types
