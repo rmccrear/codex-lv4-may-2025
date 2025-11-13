@@ -145,3 +145,43 @@ Aim to achieve at least **50% code coverage** on your own. This means at least h
 - Expand coverage to include validation failures (Part 3.5), multi-resource scenarios (Part 3.11), DELETE operations using the filter pattern (Part 3.8), and error helpers (Part 4).
 - Add at least three additional `GET`, `POST`, or `DELETE` test cases that explore different happy paths and failure modes.
 - Run the suite with `npx vitest` (or `npm run test` if you wired the script) and ensure in-memory data is reset between tests so results stay deterministic.
+
+<!-- LEVEL_START -->
+
+## Level 15 (Challenge): Deploy with Render
+
+Deploy your Express server to Render so it's accessible on the internet. This allows you to share your API with others and test it from anywhere.
+
+**Setup:**
+1. Create an account at [render.com](https://render.com)
+   - **Note:** You may need a credit card for ID verification (free tier available)
+2. Connect your Git repository (GitHub, GitLab, or Bitbucket)
+3. Create a new **Web Service** (not a Static Site)
+4. Configure your service:
+   - **Build Command:** `npm install` (or leave default)
+   - **Start Command:** `npm start` (make sure your `package.json` has a `start` script)
+   - **Environment:** Node
+5. Ensure your server listens on the port provided by Render's `PORT` environment variable:
+
+Show Me: Render deployment configuration
+
+```js
+// src/index.js or src/app.js
+import express from 'express';
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// ... your routes ...
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+```
+
+6. Deploy and test your live API endpoints using the URL Render provides (e.g., `https://your-app.onrender.com`)
+
+**Success Criteria:**
+- Your Express server is live and accessible via a public URL
+- All your routes work correctly on the deployed server
+- You can test your API using Postman or curl with the Render URL
