@@ -1,12 +1,3 @@
----
-title: Server Lesson Part 2
-type: guide
-week: 1
-order: 102
-section: Week 1
-source_file: server-lesson-overview.md
----
-
 <!-- LEVEL_START -->
 
 ## Level 2: Kickoff — Start the Server
@@ -15,21 +6,32 @@ Focus on spinning up a minimal Express app and verifying that you can return JSO
 
 <!-- LEVEL_START -->
 
-## Level 2.0: Serve Text First
+## Level 2.0: Serve HTML First
 
-Kick things off by returning a simple text or HTML response from your root route so you can confirm Express is listening. Use `res.send('Hello')` or send a small HTML snippet to see the browser render content.
+Now that you've tested with plain text, let's serve HTML from your root route. Update your route to use `res.send()` with an HTML snippet so you can see the browser render formatted content. For example, try sending `<h1>Hello Express!</h1><p>Your server is working!</p>` to see HTML rendering in action.
 
 <!-- LEVEL_START -->
 
-## Level 2.1: Ship the Root Route
+## Level 2.1: Set Up Postman for Testing
 
-Start by initializing an Express app and wiring up a root route (`GET /`) that returns JSON. Keep the payload small but descriptive so you can confirm your server responds as expected.
+Download and install Postman (the desktop application, not the website) so you can test your localhost server. Postman allows you to send HTTP requests to `http://localhost:3000` and inspect responses.
+
+**Option 1: Postman Desktop App (Recommended)**
+- Download from [postman.com/downloads](https://www.postman.com/downloads/)
+- Install the desktop application (not the web version)
+- The desktop app can access `localhost` URLs
+
+**Option 2: Postman Extension**
+- Install the Postman extension for VS Code or your preferred browser
+- Ensure it supports localhost connections
+
+Once installed, you'll use Postman to test your API endpoints throughout this project. Make sure you can access `http://localhost:3000` before moving to the next level.
 
 <!-- LEVEL_START -->
 
 ## Level 2.2: Serve Static Assets
 
-Use `app.use(express.static('public'))` (or a directory name you prefer) so the server can return HTML, CSS, images, or other assets directly from disk. Seed the directory with a variety of files (`index.html`, `styles.css`, `sample.json`, `report.csv`, `logo.png`) and hit each one with your browser or Postman.
+Use `app.use(express.static('public'))` (or a directory name you prefer) so the server can return HTML, CSS, images, or other assets directly from disk. Seed the directory with a variety of files (`styles.css`, `sample.json`, `report.csv`, `logo.png`) and hit each one with your browser or Postman.
 
 <!-- LEVEL_START -->
 
@@ -51,11 +53,28 @@ Use `app.use(express.static('public'))` (or a directory name you prefer) so the 
 
 <!-- LEVEL_START -->
 
-## Level 2.5: Most APIs Speak JSON
+## Level 2.5: Create a JSON Route
 
-- Reflect on how many Express projects focus on serving and consuming JSON payloads instead of HTML pages.
-- Make a quick list of client types (single-page apps, mobile apps, other services) that depend on consistent JSON responses.
-- Note how this informs your route design, validation, and versioning choices.
+Create a new route called "Happy Birthday" that returns JSON. Add a `GET /happy-birthday` route (or similar path) that returns a JSON object with:
+- `name`: a person's name
+- `age`: their age
+- `greeting`: a birthday greeting message
+
+Use `res.json()` to send the response. Test it in Postman to see the JSON formatted response.
+
+Show Me: happy birthday JSON route
+
+```js
+app.get('/happy-birthday', (req, res) => {
+  res.json({
+    name: 'Alice',
+    age: 25,
+    greeting: 'Happy Birthday! 🎉'
+  });
+});
+```
+
+- Verify in Postman or your browser that the response body and `Content-Type: application/json` header are both correct.
 
 <!-- LEVEL_START -->
 
@@ -83,23 +102,3 @@ Add two additional `GET` routes modeled after a public API of your choice. Aim t
 ## Level 2.9 (Challenge): Developer Feedback Loop
 
 - Time yourself rebuilding the server from scratch to reinforce muscle memory.
-- Introduce a workflow helper such as `nodemon`, `npm run dev`, or a REST client (Insomnia, Postman, VS Code REST) to speed feedback loops and repeat the timed run. For example, add this to `package.json`:
-
-Show Me: npm dev script
-
-```json
-{
-  "scripts": {
-    "dev": "nodemon src/index.js"
-  }
-}
-```
-
-<!-- LEVEL_START -->
-
-## Level 2.10 (Challenge): Stress Test Your Routes
-
-- Use your tool of choice (REST client, small script, or browser tabs) to hit your JSON endpoints in rapid succession.
-- Observe logs and confirm status codes stay correct even under quick successive requests.
-- Jot down any performance or ergonomics tweaks you might explore next.
-
