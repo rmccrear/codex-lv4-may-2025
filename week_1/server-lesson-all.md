@@ -196,9 +196,9 @@ your-project/
 ```
 
 **Testing:**
-- Visit `http://localhost:3000/styles.css` to see the CSS file
-- Visit `http://localhost:3000/sample.json` to see the JSON file
-- Visit `http://localhost:3000/logo.png` to see the image
+- Visit `http://localhost:3000/styles.css` to see the CSS file (expected MIME type: `text/css`)
+- Visit `http://localhost:3000/sample.json` to see the JSON file (expected MIME type: `application/json`)
+- Visit `http://localhost:3000/logo.png` to see the image (expected MIME type: `image/png`)
 
 <!-- LEVEL_START -->
 
