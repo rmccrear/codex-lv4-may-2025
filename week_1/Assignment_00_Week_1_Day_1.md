@@ -27,7 +27,7 @@ Today you'll start building an Express server! You'll learn why Express is usefu
 
 ### Get Started
 
-👉 **[Begin with Level 1: Why Build an Express Server?](https://rmccrear.github.io/codex-lv4-may-2025/server-lesson-levels/server-lesson-lv-1.html)**
+👉 **[Begin with Level 1: Why Build an Express Server?](https://rmccrear.github.io/codex-lv4-may-2025/week_1/server-lesson-levels/server-lesson-lv-1.html)**
 
 The lesson is broken down into progressive levels that guide you step-by-step through building your Express server. Start with Level 1 and work through the levels sequentially.
 
