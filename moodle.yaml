@@ -1,0 +1,37 @@
+# Moodle Course Configuration
+# Default frontmatter values shared by all assignments in this course
+
+# Course ID (required for creating/updating assignments)
+moodle_course_id: 75
+
+# Default due date/time pattern
+# Format: DAY HH:MM (e.g., "SUN 20:00" for Sunday at 8:00 PM)
+# This will be applied to all assignments unless overridden in individual files
+default_due_date: SUN 20:00
+
+# Default allow submissions from date/time
+# Format: DAY HH:MM or leave null to use assignment creation date
+default_allow_submissions_from: null
+
+# Default completion conditions
+# Options: 'Make a submission', 'View the activity', 'Receive a grade'
+default_completion_conditions: 'Make a submission'
+
+# Default maximum grade
+default_max_grade: 100
+
+# Default grade to pass (must be less than max_grade)
+default_grade_to_pass: null
+
+# UI Automation Wait Times (in milliseconds)
+# These control how long the script waits between operations
+# Reduce these values to speed up the script (but may cause timing issues)
+wait_time:
+  default: 500    # Default wait between commands (reduced from 1000)
+  short: 250      # Short wait for quick operations (reduced from 500)
+  medium: 750     # Medium wait for UI updates (reduced from 1500)
+  long: 1250      # Long wait for complex operations (reduced from 2500)
+  page_load: 1000 # Wait after page load operations (reduced from 2000)
+  network_idle: 200  # Network idle timeout for page loads (reduced from 500ms)
+
+
