@@ -9,6 +9,9 @@ max_grade: 100
 cmid: '4002'
 moodle_cmid: '4002'
 completion_conditions: 'Make a submission'
+allow_submissions_from: "MON"
+due_date: "2025-11-30T21:59:00"
+cutoff_date: "2025-12-07T21:59:00"
 ---
 
 # Kata Practice (suggested: Filter Search)

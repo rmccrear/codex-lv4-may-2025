@@ -35,6 +35,13 @@ Today you'll start building an Express server! You'll learn why Express is usefu
 
 The lesson is broken down into progressive levels that guide you step-by-step through building your Express server. Start with Level 1 and work through the levels sequentially.
 
+## Deliverable
+
+Your submission must include:
+
+* **GitHub Repo** - A GitHub repository containing your project code
+* **Frequent commits** - Regular commits showing your development progress
+
 #### Rubric (100 pts)
 
   * Project setup and configuration 0–25

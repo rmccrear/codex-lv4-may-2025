@@ -135,6 +135,83 @@ The response body can take many forms, but two you'll use often are HTML and JSO
 
 Focus on spinning up a minimal Express app and verifying that you can return JSON back to a client. This level should feel quick—you only need a root route and confidence that the server responds.
 
+### Understanding Node.js Runtime and Development Tools
+
+Before starting your server, it's helpful to understand the tools you'll use to run your Node.js application:
+
+#### `node` vs `nodemon`
+
+**`node`** is the Node.js runtime itself—the program that executes JavaScript files:
+- Run a file directly: `node src/index.js`
+- Starts your server once
+- If you make code changes, you must manually stop and restart the server (Ctrl+C, then run again)
+
+**`nodemon`** is a development tool that wraps `node` with automatic restarts:
+- Watches your files for changes
+- Automatically restarts the server when you save changes
+- Saves time during development—no need to manually restart after each edit
+- Not for production—use `node` instead
+
+**Example:**
+```bash
+# Using node directly (manual restart required)
+node src/index.js
+
+# Using nodemon (auto-restart on file changes)
+nodemon src/index.js
+```
+
+#### `npm run start` vs `npm run dev`
+
+These are npm scripts defined in your `package.json`. The difference depends on what each script does:
+
+**`npm run start`** (Production/Standard):
+- Typically runs your server with `node` (production mode)
+- Example: `"start": "node src/index.js"`
+- Server runs once; requires manual restart for changes
+- Use when you want stable, one-time execution
+
+**`npm run dev`** (Development):
+- Typically runs your server with `nodemon` (development mode)
+- Example: `"dev": "nodemon src/index.js"`
+- Server auto-restarts on file changes
+- Use during development for faster iteration
+
+**Why have both?**
+- **Development**: Use `npm run dev` for auto-restart convenience while coding
+- **Production**: Use `npm run start` for stable, predictable server execution
+- **Team Consistency**: Everyone uses the same commands regardless of their setup
+
+**Check your `package.json`:**
+```json
+{
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  }
+}
+```
+
+### Quick Start
+
+1. **Start your server:**
+   ```bash
+   npm run dev
+   ```
+
+2. **Verify it's running:**
+   - Look for a message like "Server running on http://localhost:3000"
+   - Try accessing `http://localhost:3000` in your browser
+
+3. **Test auto-restart (if using `dev`):**
+   - Make a small change to your code (e.g., change a message)
+   - Save the file
+   - Watch the terminal—nodemon should automatically restart the server
+
+4. **Check your root route:**
+   - Visit `http://localhost:3000` in your browser
+   - You should see a JSON response or your configured response
+
 <!-- LEVEL_START -->
 
 ## Level 6: Serve HTML First

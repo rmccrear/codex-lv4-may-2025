@@ -5,9 +5,9 @@ week: 1
 order: 2
 section: Week 1
 source_file: week1/assign_3962.md
-due_date: SUN 20:00
-allow_submissions_from: SUN 20:00
-grading_due_date: SUN 20:00
+due_date: SUN 21:59
+allow_submissions_from: MON
+grading_due_date: SUN 21:59
 max_grade: 100
 moodle_course_id: 75
 cmid: '3997'
@@ -40,6 +40,14 @@ Build a RESTful Express API that implements core CRUD operations using in-memory
 👉 **[View Complete Project Guide: Server Mini-Project](server-mini-project.md)**
 
 The full project guide includes detailed requirements, step-by-step phases, helpful resources, and a complete checklist to ensure your submission is complete.
+
+## Deliverable
+
+Your submission must include:
+
+* **GitHub Repo** - A GitHub repository containing your project code
+* **README** - A complete README with setup instructions and API documentation. See [Sample README](https://github.com/rmccrear/codex-lv4-may-2025/blob/main/week_1/SERVER_LESSON_MINI_PROJECT_README_EXAMPLE.md) for an example
+* **Frequent commits** - Regular commits showing your development progress
 
 #### Rubric (100 pts)
 
