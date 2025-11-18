@@ -135,7 +135,7 @@ The response body can take many forms, but two you'll use often are HTML and JSO
 
 ## Level 5: Kickoff — Start the Server
 
-Focus on spinning up a minimal Express app and verifying that you can return JSON back to a client. This level should feel quick—you only need a root route and confidence that the server responds.
+Practice spinning up an Express app and verifying that you can access it from a client. This level should feel quick—you only need a root route and confidence that the server responds.
 
 ### Understanding Node.js Runtime and Development Tools
 
@@ -394,6 +394,8 @@ Add two additional `GET` routes modeled after a public API of your choice. Aim t
 
 - Time yourself rebuilding the server from scratch to reinforce muscle memory.
 <!-- LEVEL_START -->
+
+<!-- INFORMATIVE_ONLY -->
 
 ## Level 16: Manage Data — Create and Persist
 
