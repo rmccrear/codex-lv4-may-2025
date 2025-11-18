@@ -15,19 +15,17 @@ Create a `FilterEvensArrayMethod` component that:
 
 ## Starter Code
 
-```jsx
-export default function FilterEvensArrayMethod() {
+<pre><code class="language-jsx">export default function FilterEvensArrayMethod() {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   // Use .filter() here
 
   return (
-    <div>
+    &lt;div&gt;
       {/* Display the even numbers */}
-    </div>
+    &lt;/div&gt;
   );
-}
-```
+}</code></pre>
 
 ## Hints
 
@@ -41,19 +39,17 @@ export default function FilterEvensArrayMethod() {
 <details>
 <summary>Click to reveal solution</summary>
 
-```jsx
-export default function FilterEvensArrayMethod() {
+<pre><code class="language-jsx">export default function FilterEvensArrayMethod() {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const evenNumbers = numbers.filter((number) => number % 2 === 0);
+  const evenNumbers = numbers.filter((number) =&gt; number % 2 === 0);
 
   return (
-    <div>
-      <p>Even numbers: {evenNumbers.join(', ')}</p>
-    </div>
+    &lt;div&gt;
+      &lt;p&gt;Even numbers: {evenNumbers.join(&#x27;, &#x27;)}&lt;/p&gt;
+    &lt;/div&gt;
   );
-}
-```
+}</code></pre>
 
 </details>
 

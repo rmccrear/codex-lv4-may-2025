@@ -19,23 +19,21 @@ Typing updates the search input and immediately filters the list, just like Kata
 
 ## Starter Code
 
-```jsx
-import { useState } from 'react';
+<pre><code class="language-jsx">import { useState } from &#x27;react&#x27;;
 
 export default function SearchNamesArrayMethod() {
-  const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
-  const [search, setSearch] = useState('');
+  const names = [&#x27;Alice&#x27;, &#x27;Bob&#x27;, &#x27;Charlie&#x27;, &#x27;David&#x27;, &#x27;Eve&#x27;];
+  const [search, setSearch] = useState(&#x27;&#x27;);
 
   // Use .filter() here
 
   return (
-    <div>
+    &lt;div&gt;
       {/* Add search input */}
       {/* Display filtered results */}
-    </div>
+    &lt;/div&gt;
   );
-}
-```
+}</code></pre>
 
 ## Hints
 
@@ -48,30 +46,28 @@ export default function SearchNamesArrayMethod() {
 <details>
 <summary>Click to reveal solution</summary>
 
-```jsx
-import { useState } from 'react';
+<pre><code class="language-jsx">import { useState } from &#x27;react&#x27;;
 
 export default function SearchNamesArrayMethod() {
-  const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
-  const [search, setSearch] = useState('');
+  const names = [&#x27;Alice&#x27;, &#x27;Bob&#x27;, &#x27;Charlie&#x27;, &#x27;David&#x27;, &#x27;Eve&#x27;];
+  const [search, setSearch] = useState(&#x27;&#x27;);
 
-  const filteredNames = names.filter((name) =>
+  const filteredNames = names.filter((name) =&gt;
     name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div>
-      <input
-        type="text"
+    &lt;div&gt;
+      &lt;input
+        type=&quot;text&quot;
         value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder="Search names..."
-      />
-      <p>Results: {filteredNames.join(', ')}</p>
-    </div>
+        onChange={(event) =&gt; setSearch(event.target.value)}
+        placeholder=&quot;Search names...&quot;
+      /&gt;
+      &lt;p&gt;Results: {filteredNames.join(&#x27;, &#x27;)}&lt;/p&gt;
+    &lt;/div&gt;
   );
-}
-```
+}</code></pre>
 
 </details>
 

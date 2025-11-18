@@ -24,17 +24,15 @@ Create a `FruitListMap` component that:
 
 ## Starter Code
 
-```jsx
-export default function FruitListMap() {
-  const fruits = ['Apple', 'Banana', 'Orange', 'Grape'];
+<pre><code class="language-jsx">export default function FruitListMap() {
+  const fruits = [&#x27;Apple&#x27;, &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Grape&#x27;];
 
   return (
-    <ul>
+    &lt;ul&gt;
       {/* Use .map() here */}
-    </ul>
+    &lt;/ul&gt;
   );
-}
-```
+}</code></pre>
 
 ## Hints
 
@@ -48,19 +46,17 @@ export default function FruitListMap() {
 <details>
 <summary>Click to reveal solution</summary>
 
-```jsx
-export default function FruitListMap() {
-  const fruits = ['Apple', 'Banana', 'Orange', 'Grape'];
+<pre><code class="language-jsx">export default function FruitListMap() {
+  const fruits = [&#x27;Apple&#x27;, &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Grape&#x27;];
 
   return (
-    <ul>
-      {fruits.map((fruit) => (
-        <li key={fruit}>{fruit}</li>
+    &lt;ul&gt;
+      {fruits.map((fruit) =&gt; (
+        &lt;li key={fruit}&gt;{fruit}&lt;/li&gt;
       ))}
-    </ul>
+    &lt;/ul&gt;
   );
-}
-```
+}</code></pre>
 
 </details>
 
