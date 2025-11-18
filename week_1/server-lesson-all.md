@@ -399,7 +399,7 @@ Add two additional `GET` routes modeled after a public API of your choice. Aim t
 
 ## Level 16: Manage Data — Create and Persist
 
-Lay the groundwork for working with data by breaking the classic CRUD flow into small, repeatable wins. Each level builds on the previous one so you can iterate confidently. Before we bring in a real SQL database like Supabase's Postgres, we'll keep data in simple in-memory arrays (declared as module-level globals) so you can focus on route behavior without worrying about persistence.
+The next series of levels introduces working with data through the classic CRUD (Create, Read, Update, Delete) operations. These levels break the CRUD flow into small, repeatable steps that build on each other, allowing you to iterate confidently. Instead of starting with a full SQL database like Supabase's Postgres, these levels use simple in-memory arrays (declared as module-level globals) so you can focus on understanding route behavior and data manipulation patterns without the complexity of database connections and persistence concerns.
 
 ### Why Start with In-Memory Data?
 
@@ -454,13 +454,13 @@ app.post('/items', (req, res) => {
 - **Data is lost on server restart**: When you stop the server (Ctrl+C) or it crashes, all data in the array is gone. This is why it's called "in-memory"—it only exists in the server's RAM.
 
 
-**The path forward:**
+**What comes next:**
 
-As you progress through these levels, you'll learn to:
+The upcoming levels will cover how to:
 1. Create, read, update, and delete data using in-memory arrays
 2. Validate and structure your data properly
 3. Handle errors and edge cases
-4. Later, you'll learn to connect to Supabase (PostgreSQL) and use the same patterns with persistent, production-ready storage
+4. Later, connect to Supabase (PostgreSQL) and use the same patterns with persistent, production-ready storage
 
 Think of in-memory arrays as a **training ground**—once you understand how to manipulate data with arrays, moving to a database is mostly about learning the syntax, not the concepts.
 
