@@ -131,6 +131,8 @@ The response body can take many forms, but two you'll use often are HTML and JSO
 
 <!-- LEVEL_START -->
 
+<!-- INFORMATIVE_ONLY -->
+
 ## Level 5: Kickoff — Start the Server
 
 Focus on spinning up a minimal Express app and verifying that you can return JSON back to a client. This level should feel quick—you only need a root route and confidence that the server responds.
@@ -217,6 +219,51 @@ These are npm scripts defined in your `package.json`. The difference depends on 
 ## Level 6: Serve HTML First
 
 Now that you've tested with plain text, let's serve HTML from your root route. Update your route to use `res.send()` with an HTML snippet so you can see the browser render formatted content. For example, try sending `<h1>Hello Express!</h1><p>Your server is working!</p>` to see HTML rendering in action.
+
+Show Me: serving HTML with res.send()
+
+```js
+// src/index.js
+app.get('/', (req, res) => {
+  res.send('<h1>Hello Express!</h1><p>Your server is working!</p>');
+});
+```
+
+### Digging Deeper: Template Literals and Backticks
+
+When serving HTML, you might want to write multi-line HTML for better readability. JavaScript **template literals** (strings wrapped in backticks `` ` ``) allow you to write multi-line strings and include variables:
+
+**Backticks vs. Quotes:**
+- **Regular strings** (single `'` or double `"` quotes): Must be on a single line
+- **Template literals** (backticks `` ` ``): Can span multiple lines and support interpolation with `${variable}`
+
+**Example:**
+```js
+// Single-line string (regular quotes)
+res.send('<h1>Hello Express!</h1><p>Your server is working!</p>');
+
+// Multi-line string (backticks)
+res.send(`
+  <h1>Hello Express!</h1>
+  <p>Your server is working!</p>
+  <ul>
+    <li>Feature 1</li>
+    <li>Feature 2</li>
+  </ul>
+`);
+
+// Template literal with variable interpolation
+const name = 'Express';
+res.send(`<h1>Hello ${name}!</h1>`);
+```
+
+**When to use backticks:**
+- ✅ Writing multi-line HTML strings
+- ✅ Including variables in strings (interpolation)
+- ✅ Building dynamic HTML content
+- ❌ Not needed for simple single-line strings (regular quotes work fine)
+
+**Note:** When using backticks for multi-line HTML, whitespace (spaces, tabs, newlines) is preserved. This is usually fine for HTML since browsers collapse extra whitespace, but be aware that indentation in your code will appear in the output.
 
 <!-- LEVEL_START -->
 
@@ -350,7 +397,70 @@ Add two additional `GET` routes modeled after a public API of your choice. Aim t
 
 ## Level 16: Manage Data — Create and Persist
 
-Lay the groundwork for working with data by breaking the classic CRUD flow into small, repeatable wins. Each level builds on the previous one so you can iterate confidently. Before we bring in a real SQL database like Supabase’s Postgres, we’ll keep data in simple in-memory arrays (declared as module-level globals) so you can focus on route behavior without worrying about persistence.
+Lay the groundwork for working with data by breaking the classic CRUD flow into small, repeatable wins. Each level builds on the previous one so you can iterate confidently. Before we bring in a real SQL database like Supabase's Postgres, we'll keep data in simple in-memory arrays (declared as module-level globals) so you can focus on route behavior without worrying about persistence.
+
+### Why Start with In-Memory Data?
+
+When learning to build APIs, it's common to start with in-memory storage before introducing database complexity. This approach allows you to:
+
+- **Focus on route logic**: Learn how to structure GET, POST, PUT, DELETE routes without worrying about SQL syntax or connection management
+- **Understand data flow**: See how data moves through your application from request → processing → response
+- **Iterate quickly**: Make changes and test immediately without database migrations or schema updates
+- **Build confidence**: Master the patterns (like finding items by ID, validating input) that you'll reuse with real databases later
+
+### Digging Deeper: In-Memory Arrays as Module-Level Globals
+
+**What is a module-level global?**
+
+In Node.js, when you declare a variable at the top level of a file (outside of any function), it becomes a **module-level variable**. This variable is shared across all code within that module (file), and any route handler in that file can access and modify it.
+
+**Example:**
+```js
+// src/index.js
+import express from 'express';
+
+const app = express();
+
+// This is a module-level global array
+// It's declared outside any function, at the "top level" of the module
+const items = [
+  {name: "gum", brand: "Bubalishous"},
+  {name: "toothpaste", brand: "Colgate"},
+  {name: "bike", brand: "Huffy"}
+
+];
+
+app.get('/items', (req, res) => {
+  // Route handlers can access the items array
+  res.json(items);
+});
+
+app.post('/items', (req, res) => {
+  // Route handlers can modify the items array
+  items.push(req.body);
+  res.status(201).json(req.body);
+});
+```
+
+**Why use module-level globals for in-memory data?**
+
+1. **Persistence during server session**: As long as your server is running, data in the array persists. Multiple requests can read and write to the same array.
+2. **Simple and straightforward**: No need for complex setup—just declare an array and start using it.
+
+**Important limitations to understand:**
+
+- **Data is lost on server restart**: When you stop the server (Ctrl+C) or it crashes, all data in the array is gone. This is why it's called "in-memory"—it only exists in the server's RAM.
+
+
+**The path forward:**
+
+As you progress through these levels, you'll learn to:
+1. Create, read, update, and delete data using in-memory arrays
+2. Validate and structure your data properly
+3. Handle errors and edge cases
+4. Later, you'll learn to connect to Supabase (PostgreSQL) and use the same patterns with persistent, production-ready storage
+
+Think of in-memory arrays as a **training ground**—once you understand how to manipulate data with arrays, moving to a database is mostly about learning the syntax, not the concepts.
 
 <!-- LEVEL_START -->
 
