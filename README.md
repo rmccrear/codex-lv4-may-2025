@@ -141,4 +141,14 @@ M_75_MAY_COHORT_2025___LEVEL_4/
 
 ---
 
+## Guides
+
+Quick reference guides for development and deployment:
+
+- [Guides Overview](guides/README.md)
+- [Environment Variables](guides/environment-variables.md)
+- [DigitalOcean Deployment](guides/digital-ocean-deploy.md)
+
+---
+
 *Total Weeks: 9 | Total Activities: 37*
