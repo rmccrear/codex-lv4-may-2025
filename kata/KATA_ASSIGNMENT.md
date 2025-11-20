@@ -221,7 +221,7 @@ A: Great! Spend more time explaining concepts in depth and discussing variations
 
 ## 📚 Resources
 
-- [React Cheatsheet](../../REACT_CHEATSHEET.md)
+- [React Documentation](https://react.dev/)
 - [All Katas](./README.md)
 - [Loom - Free Screen Recording](https://www.loom.com/)
 - [React Documentation](https://react.dev/)

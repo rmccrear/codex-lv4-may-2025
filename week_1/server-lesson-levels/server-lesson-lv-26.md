@@ -5,17 +5,65 @@ Level Navigation: [1](./server-lesson-lv-1.md) | [2](./server-lesson-lv-2.md) | 
 - Write your in-memory data out to a JSON file after each create.
 - On server start, load the file back in so data survives restarts.
 - **Important:** Name your JSON file after your resource (e.g., `books.json`, `courses.json`), not `items.json`.
+- **Hint:** Replace your fake data array (like `const itemsStorage = [...]`) with data loaded from the JSON file. Read from the file once when the server starts, then call `saveItems()` after each change (POST, PUT, DELETE) in your routes.
+
+<details>
+<summary>Show Me: read from disk</summary>
+<pre><code class="language-js">
+import { readFileSync, writeFileSync } from 'node:fs';
+
+const DATA_PATH = './items.json';
+
+// Load data from file when server starts
+// If file doesn't exist yet, start with empty array
+let itemsStorage = [];
+try {
+  itemsStorage = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
+} catch (error) {
+  // File doesn't exist yet, start with empty array
+  itemsStorage = [];
+}
+</code></pre>
+</details>
 
 <details>
 <summary>Show Me: persist to disk</summary>
 <pre><code class="language-js">
 import { readFileSync, writeFileSync } from 'node:fs';
-const DATA_PATH = new URL('./items.json', import.meta.url);
 
-let itemsStorage = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
+const DATA_PATH = './items.json';
+
+// Load data from file when server starts (read once at startup)
+// If file doesn't exist yet, start with empty array
+let itemsStorage = [];
+try {
+  itemsStorage = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
+} catch (error) {
+  // File doesn't exist yet, start with empty array
+  itemsStorage = [];
+}
 
 function saveItems() {
   writeFileSync(DATA_PATH, JSON.stringify(itemsStorage, null, 2));
 }
+
+// Use in your routes - call saveItems() after each change:
+app.post('/items', (req, res) =&amp;gt; {
+  itemsStorage.push(req.body);
+  saveItems(); // Write after each POST
+  res.json(req.body);
+});
+
+app.put('/items/:id', (req, res) =&amp;gt; {
+  // ... update logic ...
+  saveItems(); // Write after each PUT
+  res.json(updatedItem);
+});
+
+app.delete('/items/:id', (req, res) =&amp;gt; {
+  // ... delete logic ...
+  saveItems(); // Write after each DELETE
+  res.json({ message: 'Deleted' });
+});
 </code></pre>
 </details>

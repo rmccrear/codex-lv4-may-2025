@@ -1,6 +1,6 @@
 # React Katas 🥋
 
-Simple React exercises to practice core concepts from the [React Cheatsheet](../../REACT_CHEATSHEET.md).
+Simple React exercises to practice core concepts.
 
 **📋 [View Assignment Instructions](./KATA_ASSIGNMENT.md)** - Practice and record yourself completing a kata!
 
@@ -68,7 +68,7 @@ Katas are small, focused coding exercises designed to build muscle memory and re
 - ✅ **Type it out** - Don't copy/paste; typing builds memory
 - ✅ **Understand, don't memorize** - Focus on why the code works
 - ✅ **Experiment** - Try variations and see what happens
-- ✅ **Use the cheatsheet** - Reference the [React Cheatsheet](../../REACT_CHEATSHEET.md) when stuck
+- ✅ **Use the cheatsheet** - Reference React documentation when stuck
 
 ## Concepts Covered
 
@@ -112,41 +112,41 @@ After completing these katas:
 
 ## Glossary
 
-### Key Terms from [Vocabulary List](../../VOCABULARY_LIST.md)
+### Key Terms from [Vocabulary List](../../VOCABULARY_LEVEL_4.md)
 
-**[Kata](../../VOCABULARY_LIST.md#kata):** A coding exercise where you practice implementing a specific feature or pattern repeatedly to build muscle memory and fluency.
+**[Kata](../../VOCABULARY_LEVEL_4.md#kata):** A coding exercise where you practice implementing a specific feature or pattern repeatedly to build muscle memory and fluency.
 
-**[Components](../../VOCABULARY_LIST.md#components):** In React, the building blocks of applications. Everything in React is made from components. They help organize code and keep programs from becoming too complicated.
+**[Components](../../VOCABULARY_LEVEL_4.md#components):** In React, the building blocks of applications. Everything in React is made from components. They help organize code and keep programs from becoming too complicated.
 
-**[React](../../VOCABULARY_LIST.md#react):** A framework created by Facebook in 2013. It's built on the idea of components and is one of the most popular tools for making modern websites.
+**[React](../../VOCABULARY_LEVEL_4.md#react):** A framework created by Facebook in 2013. It's built on the idea of components and is one of the most popular tools for making modern websites.
 
-**[JSX](../../VOCABULARY_LIST.md#jsx):** A special syntax used in React. It looks like HTML but isn't exactly the same. JSX must be used inside React components.
+**[JSX](../../VOCABULARY_LEVEL_4.md#jsx):** A special syntax used in React. It looks like HTML but isn't exactly the same. JSX must be used inside React components.
 
-**[Props (Properties)](../../VOCABULARY_LIST.md#props-properties):** Attributes you can give to components to make them more powerful. Props are like HTML attributes but for your own custom components.
+**[Props (Properties)](../../VOCABULARY_LEVEL_4.md#props-properties):** Attributes you can give to components to make them more powerful. Props are like HTML attributes but for your own custom components.
 
-**[State](../../VOCABULARY_LIST.md#state):** In React, component-local data that React preserves between renders so a component can remember information and update the UI (e.g., a click counter).
+**[State](../../VOCABULARY_LEVEL_4.md#state):** In React, component-local data that React preserves between renders so a component can remember information and update the UI (e.g., a click counter).
 
-**[useState](../../VOCABULARY_LIST.md#usestate):** Hook that returns a state value and a setter. Initializes component state and triggers re-render when the setter is called.
+**[useState](../../VOCABULARY_LEVEL_4.md#usestate):** Hook that returns a state value and a setter. Initializes component state and triggers re-render when the setter is called.
 
-**[Hook](../../VOCABULARY_LIST.md#hook):** Special React function whose name starts with `use` (e.g., `useState`, `useEffect`). Must follow the Rules of Hooks.
+**[Hook](../../VOCABULARY_LEVEL_4.md#hook):** Special React function whose name starts with `use` (e.g., `useState`, `useEffect`). Must follow the Rules of Hooks.
 
-**[handleClick](../../VOCABULARY_LIST.md#handleclick):** Conventional camelCase name for a click event handler function.
+**[handleClick](../../VOCABULARY_LEVEL_4.md#handleclick):** Conventional camelCase name for a click event handler function.
 
-**[Function](../../VOCABULARY_LIST.md#function):** In programming, reusable blocks of code that perform a specific task. They help organize code, avoid repetition, and make programs easier to understand.
+**[Function](../../VOCABULARY_LEVEL_4.md#function):** In programming, reusable blocks of code that perform a specific task. They help organize code, avoid repetition, and make programs easier to understand.
 
-**[Return](../../VOCABULARY_LIST.md#return):** In a React component function, the return statement sends back the JSX that should be shown on the screen.
+**[Return](../../VOCABULARY_LEVEL_4.md#return):** In a React component function, the return statement sends back the JSX that should be shown on the screen.
 
-**[Conditional Rendering](../../VOCABULARY_LIST.md#conditional-rendering):** Showing different UI based on a condition using JS expressions in JSX (e.g., `{isOn ? 'On' : 'Off'}`).
+**[Conditional Rendering](../../VOCABULARY_LEVEL_4.md#conditional-rendering):** Showing different UI based on a condition using JS expressions in JSX (e.g., `{isOn ? 'On' : 'Off'}`).
 
-**[Ternary Operator](../../VOCABULARY_LIST.md#ternary-operator):** `condition ? exprIfTrue : exprIfFalse`; commonly used inside JSX for conditional rendering.
+**[Ternary Operator](../../VOCABULARY_LEVEL_4.md#ternary-operator):** `condition ? exprIfTrue : exprIfFalse`; commonly used inside JSX for conditional rendering.
 
-**[Event Listener](../../VOCABULARY_LIST.md#event-listener):** In web development, code that waits for something to happen (like a button click or a request) and then runs a function in response.
+**[Event Listener](../../VOCABULARY_LEVEL_4.md#event-listener):** In web development, code that waits for something to happen (like a button click or a request) and then runs a function in response.
 
-**[useEffect](../../VOCABULARY_LIST.md#useeffect):** Hook that runs code after a component renders. Commonly used to fetch data when a component first loads.
+**[useEffect](../../VOCABULARY_LEVEL_4.md#useeffect):** Hook that runs code after a component renders. Commonly used to fetch data when a component first loads.
 
-**[Async](../../VOCABULARY_LIST.md#async):** Keyword that creates asynchronous functions, allowing the use of `await` inside.
+**[Async](../../VOCABULARY_LEVEL_4.md#async):** Keyword that creates asynchronous functions, allowing the use of `await` inside.
 
-**[Await](../../VOCABULARY_LIST.md#await):** Keyword used inside async functions to wait for a promise to resolve before continuing.
+**[Await](../../VOCABULARY_LEVEL_4.md#await):** Keyword used inside async functions to wait for a promise to resolve before continuing.
 
-**[Fetch](../../VOCABULARY_LIST.md#fetch):** JavaScript function that makes HTTP requests to APIs and returns a promise.
+**[Fetch](../../VOCABULARY_LEVEL_4.md#fetch):** JavaScript function that makes HTTP requests to APIs and returns a promise.
 
