@@ -8,8 +8,8 @@ Now that you've tested with plain text, let's serve HTML from your root route. U
 <summary>Show Me: serving HTML with res.send()</summary>
 <pre><code class="language-js">
 // src/index.js
-app.get('/', (req, res) =&amp;gt; {
-  res.send('&amp;lt;h1&amp;gt;Hello Express!&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;Your server is working!&amp;lt;/p&amp;gt;');
+app.get('/', (req, res) =&gt; {
+  res.send('&lt;h1&gt;Hello Express!&lt;/h1&gt;&lt;p&gt;Your server is working!&lt;/p&gt;');
 });
 </code></pre>
 </details>

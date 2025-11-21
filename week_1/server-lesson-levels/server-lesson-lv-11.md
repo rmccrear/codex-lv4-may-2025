@@ -12,7 +12,7 @@ Use `res.json()` to send the response. Test it in Postman to see the JSON format
 <details>
 <summary>Show Me: happy birthday JSON route</summary>
 <pre><code class="language-js">
-app.get('/happy-birthday', (req, res) =&amp;gt; {
+app.get('/happy-birthday', (req, res) =&gt; {
   res.json({
     name: 'Alice',
     age: 25,

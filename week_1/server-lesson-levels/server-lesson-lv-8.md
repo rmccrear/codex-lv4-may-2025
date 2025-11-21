@@ -17,7 +17,7 @@ const app = express();
 app.use(express.static('public'));
 
 const port = 3000;
-app.listen(port, () =&amp;gt; {
+app.listen(port, () =&gt; {
   console.log(`Server listening on port ${port}`);
 });
 </code></pre>

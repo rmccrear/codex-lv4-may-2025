@@ -7,7 +7,7 @@ Add a test for one of your GET routes that returns JSON data (e.g., `GET /items`
 <details>
 <summary>Show Me: GET JSON route test</summary>
 <pre><code class="language-ts">
-it('returns seeded items array', async () =&amp;gt; {
+it('returns seeded items array', async () =&gt; {
   const server = app.listen(0);
   const res = await request(server).get('/items');
   server.close();

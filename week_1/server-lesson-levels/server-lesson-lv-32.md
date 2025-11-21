@@ -17,13 +17,13 @@ import { describe, it, expect } from 'vitest';
 import request from 'supertest';
 import app from '../../src/app';
 
-describe('Server Routes', () =&amp;gt; {
-  it('serves HTML from root route', async () =&amp;gt; {
+describe('Server Routes', () =&gt; {
+  it('serves HTML from root route', async () =&gt; {
     const server = app.listen(0);
     const res = await request(server).get('/');
     server.close();
     expect(res.status).toBe(200);
-    expect(res.text).toContain('&amp;lt;h1&amp;gt;Hello Express!&amp;lt;/h1&amp;gt;');
+    expect(res.text).toContain('&lt;h1&gt;Hello Express!&lt;/h1&gt;');
     expect(res.headers['content-type']).toMatch(/html/);
   });
 });

@@ -9,7 +9,7 @@ Level Navigation: [1](./server-lesson-lv-1.md) | [2](./server-lesson-lv-2.md) | 
 <details>
 <summary>Show Me: find item by id</summary>
 <pre><code class="language-js">
-const item = itemsStorage.find((entry) =&amp;gt; entry.id === req.params.id);
+const item = itemsStorage.find((entry) =&gt; entry.id === req.params.id);
 if (!item) return res.status(404).json({ error: 'Item not found' });
 res.json(item);
 </code></pre>

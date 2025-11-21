@@ -10,12 +10,12 @@ Level Navigation: [1](./server-lesson-lv-1.md) | [2](./server-lesson-lv-2.md) | 
 <details>
 <summary>Show Me: complete DELETE route</summary>
 <pre><code class="language-js">
-app.delete('/items/:id', (req, res) =&amp;gt; {
+app.delete('/items/:id', (req, res) =&gt; {
   
   console.log("Deleting " + req.params.id)
 
   // Find the item first to check if it exists
-  const item = itemsStorage.find((entry) =&amp;gt; entry.id === req.params.id);
+  const item = itemsStorage.find((entry) =&gt; entry.id === req.params.id);
   
   // If not found, return 404
   if (!item) {
@@ -34,12 +34,12 @@ app.delete('/items/:id', (req, res) =&amp;gt; {
 <details>
 <summary>Show Me: delete using filter pattern</summary>
 <pre><code class="language-js">
-const item = itemsStorage.find((entry) =&amp;gt; entry.id === req.params.id);
+const item = itemsStorage.find((entry) =&gt; entry.id === req.params.id);
 if (!item) return res.status(404).json({ error: 'Item not found' });
 
 // Use filter to create a new array without the deleted item
 // The filter pattern keeps all items where id does NOT match
-itemsStorage = itemsStorage.filter((entry) =&amp;gt; entry.id !== req.params.id);
+itemsStorage = itemsStorage.filter((entry) =&gt; entry.id !== req.params.id);
 res.status(200).json({ message: 'Item deleted successfully' });
 </code></pre>
 </details>

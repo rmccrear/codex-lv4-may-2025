@@ -7,7 +7,7 @@ Add a test for your Happy Birthday JSON route (Level 2.5). This tests a simple G
 <details>
 <summary>Show Me: Happy Birthday route test</summary>
 <pre><code class="language-ts">
-it('returns JSON from Happy Birthday route', async () =&amp;gt; {
+it('returns JSON from Happy Birthday route', async () =&gt; {
   const server = app.listen(0);
   const res = await request(server).get('/happy-birthday');
   server.close();

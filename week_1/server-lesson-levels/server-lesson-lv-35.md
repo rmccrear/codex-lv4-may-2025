@@ -7,7 +7,7 @@ Add a test for your POST route that creates a new record. Test that it returns s
 <details>
 <summary>Show Me: POST route test</summary>
 <pre><code class="language-ts">
-it('creates a new item', async () =&amp;gt; {
+it('creates a new item', async () =&gt; {
   const server = app.listen(0);
   const response = await request(server)
     .post('/items')

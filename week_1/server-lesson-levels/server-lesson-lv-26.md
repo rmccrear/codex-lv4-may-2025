@@ -48,19 +48,19 @@ function saveItems() {
 }
 
 // Use in your routes - call saveItems() after each change:
-app.post('/items', (req, res) =&amp;gt; {
+app.post('/items', (req, res) =&gt; {
   itemsStorage.push(req.body);
   saveItems(); // Write after each POST
   res.json(req.body);
 });
 
-app.put('/items/:id', (req, res) =&amp;gt; {
+app.put('/items/:id', (req, res) =&gt; {
   // ... update logic ...
   saveItems(); // Write after each PUT
   res.json(updatedItem);
 });
 
-app.delete('/items/:id', (req, res) =&amp;gt; {
+app.delete('/items/:id', (req, res) =&gt; {
   // ... delete logic ...
   saveItems(); // Write after each DELETE
   res.json({ message: 'Deleted' });

@@ -16,7 +16,7 @@ Level Navigation: [1](./server-lesson-lv-1.md) | [2](./server-lesson-lv-2.md) | 
 // Make sure you have express.json() middleware set up first!
 app.use(express.json());
 
-app.post('/items', (req, res) =&amp;gt; {
+app.post('/items', (req, res) =&gt; {
   // req.body contains the parsed JSON from the request
   const newItem = req.body;
   

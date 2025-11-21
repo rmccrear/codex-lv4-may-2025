@@ -17,14 +17,14 @@ Add validation and consistent error handling to your API.
 <summary>Show Me: comprehensive validation</summary>
 <pre><code class="language-js">
 // Validate multiple required fields
-app.post('/items', (req, res) =&amp;gt; {
+app.post('/items', (req, res) =&gt; {
   if (!req.body?.title) {
     return res.status(400).json({ error: 'Title is required' });
   }
   if (!req.body?.price) {
     return res.status(400).json({ error: 'Price is required' });
   }
-  if (typeof req.body.price !== 'number' || req.body.price &amp;lt; 0) {
+  if (typeof req.body.price !== 'number' || req.body.price &lt; 0) {
     return res.status(400).json({ error: 'Price must be a positive number' });
   }
   
@@ -45,15 +45,15 @@ function sendError(res, statusCode, message) {
 }
 
 // Use it in your routes
-app.post('/items', (req, res) =&amp;gt; {
+app.post('/items', (req, res) =&gt; {
   if (!req.body?.title) {
     return sendError(res, 400, 'Title is required');
   }
   // ... rest of route
 });
 
-app.get('/items/:id', (req, res) =&amp;gt; {
-  const item = itemsStorage.find(entry =&amp;gt; entry.id === req.params.id);
+app.get('/items/:id', (req, res) =&gt; {
+  const item = itemsStorage.find(entry =&gt; entry.id === req.params.id);
   if (!item) {
     return sendError(res, 404, 'Item not found');
   }
@@ -66,11 +66,11 @@ app.get('/items/:id', (req, res) =&amp;gt; {
 <summary>Show Me: request timing log (optional)</summary>
 <pre><code class="language-js">
 // Add timing middleware before your routes
-app.use((req, res, next) =&amp;gt; {
+app.use((req, res, next) =&gt; {
   const start = Date.now();
   
   // Log after response is sent
-  res.on('finish', () =&amp;gt; {
+  res.on('finish', () =&gt; {
     const duration = Date.now() - start;
     console.log(`${req.method} ${req.path} - ${res.statusCode} - ${duration}ms`);
   });
