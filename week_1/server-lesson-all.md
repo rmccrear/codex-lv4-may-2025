@@ -948,15 +948,134 @@ app.use(express.json());
 
 <!-- LEVEL_START -->
 
-## Level 31: Next Steps and Testing
+## Level 31: Refactor — Export App and Separate Server Startup
 
-- Keep refining your Express server as you introduce new features.
-- Layer in automated testing with a lightweight runner like Vitest to lock in behavior as the code evolves [^1].
-- Revisit logging, validation, and composition patterns to keep the API maintainable.
+### Goal
 
-[^1]: Inspired by the progressive testing workflow outlined in the Vitest project guide [^vitest-guide].
+Refactor your Express server to separate app configuration from server startup. This is a common practice that makes your code more testable, reusable, and better organized.
 
-[^vitest-guide]: [Vitest Project Guide](https://rmccrear.github.io/codex-lv3-may-2025/week8/function-practice/vitest-project-guide.md)
+### Why Separate App from Server?
+
+In your current setup, everything is in one file (`src/index.js`): the app creation, routes, and the `app.listen()` call. As your project grows, you'll want to:
+
+1. **Test your app without starting a server**: Testing tools like Supertest need access to your Express app, but they don't need the server to be listening on a port.
+2. **Reuse your app**: You might want to use the same app configuration in different contexts (testing, development, production).
+3. **Better organization**: Separating concerns makes your code easier to understand and maintain.
+
+### What You'll Do
+
+1. **Create `src/app.js`**: Move your Express app creation and configuration here, then export it.
+2. **Update `src/index.js`**: Import the app and handle server startup (the `listen()` call).
+
+### Step-by-Step Refactor
+
+#### Step 1: Create `src/app.js` and Export the App
+
+Create a new file `src/app.js` and move your Express app setup there:
+
+Show Me: exporting the app from app.js
+
+```js
+// src/app.js
+import express from 'express';
+
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.static('public'));
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('<h1>Hello Express!</h1><p>Your server is working!</p>');
+});
+
+app.get('/happy-birthday', (req, res) => {
+  res.json({
+    name: 'Alice',
+    age: 25,
+    greeting: 'Happy Birthday! 🎉'
+  });
+});
+
+// ... all your other routes ...
+
+// Export the app so it can be imported elsewhere
+export default app;
+```
+
+**Key changes:**
+- All your app configuration (middleware, routes) stays in `app.js`
+- The app is exported using `export default app;`
+- **No `app.listen()` call** — that will go in a different file
+
+#### Step 2: Update `src/index.js` to Import and Start the Server
+
+Update `src/index.js` to import the app and handle server startup:
+
+Show Me: importing app and starting server in index.js
+
+```js
+// src/index.js
+import app from './app.js';
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+```
+
+**Key changes:**
+- Import the app: `import app from './app.js';`
+- Handle the `listen()` call here
+- Use environment variable `PORT` for flexibility (important for deployment)
+
+### Your New Project Structure
+
+After refactoring, your project structure should look like this:
+
+```
+your-project/
+├── src/
+│   ├── app.js      ← App configuration (middleware, routes)
+│   └── index.js    ← Server startup (listen call)
+├── public/
+│   └── ...
+└── package.json
+```
+
+### Testing the Refactor
+
+1. **Start your server:**
+   ```bash
+   npm run dev
+   ```
+   - The server should start exactly as before
+   - All your routes should work the same way
+
+2. **Verify nothing broke:**
+   - Test your routes in Postman or your browser
+   - Make sure all endpoints still respond correctly
+
+### Digging Deeper: ES6 Module Exports
+
+**Exporting with `export default`:**
+- `export default app;` makes the app the **default export** from the module
+- When importing, you can use any name: `import app from './app.js'` or `import myApp from './app.js'`
+- Only one default export per module
+
+**Why this pattern is common:**
+- **Separation of concerns**: App configuration is separate from server startup
+- **Testability**: Tests can import the app without starting a server
+- **Flexibility**: You can create multiple server instances or use the app in different contexts
+- **Industry standard**: Most Express projects follow this pattern
+
+### What's Next?
+
+In the next level, you'll set up testing. Having the app exported makes it easy to import in your test files without needing to start a server. This refactor sets you up for success with automated testing!
+
+**Note:** If you're using TypeScript, the same pattern applies—just use `.ts` extensions and TypeScript syntax.
 
 <!-- LEVEL_START -->
 
@@ -967,27 +1086,29 @@ Set up Vitest and Supertest to test your Express routes. Start with a simple tes
 **Setup:**
 1. Install testing dependencies: `npm install -D vitest supertest @vitest/coverage-v8`
 2. Create a `tests` directory in the root of your project.
-3. Export your Express app from `src/app.ts` (or `src/index.js`) so it can be imported in tests
+3. **Make sure you've completed Level 31**: Your Express app should already be exported from `src/app.js` (if you haven't done the refactor yet, go back to Level 31 first)
 
 Show Me: basic test setup and Hello Express test
 
-```ts
-// tests/routes/app.test.ts
+```js
+// tests/routes/app.test.js
 import { describe, it, expect } from 'vitest';
 import request from 'supertest';
-import app from '../../src/app';
+import app from '../../src/app.js';
 
 describe('Server Routes', () => {
   it('serves HTML from root route', async () => {
-    const server = app.listen(0);
-    const res = await request(server).get('/');
-    server.close();
+    const res = await request(app).get('/');
     expect(res.status).toBe(200);
     expect(res.text).toContain('<h1>Hello Express!</h1>');
     expect(res.headers['content-type']).toMatch(/html/);
   });
 });
 ```
+
+**Notes:**
+- **No `listen()` needed**: Supertest can work directly with your Express app—you don't need to call `app.listen()`. Supertest handles the server setup internally when you pass the app directly to `request()`.
+- **`await` is required**: Supertest returns a Promise, so you need `await` when using `async/await` syntax to get the response object. Without `await`, `res` would be a Promise instead of the response, and your assertions wouldn't work.
 
 <!-- LEVEL_START -->
 
@@ -997,11 +1118,9 @@ Add a test for your Happy Birthday JSON route (Level 2.5). This tests a simple G
 
 Show Me: Happy Birthday route test
 
-```ts
+```js
 it('returns JSON from Happy Birthday route', async () => {
-  const server = app.listen(0);
-  const res = await request(server).get('/happy-birthday');
-  server.close();
+  const res = await request(app).get('/happy-birthday');
   expect(res.status).toBe(200);
   expect(res.body).toHaveProperty('name');
   expect(res.body).toHaveProperty('age');
@@ -1018,11 +1137,9 @@ Add a test for one of your GET routes that returns JSON data (e.g., `GET /items`
 
 Show Me: GET JSON route test
 
-```ts
+```js
 it('returns seeded items array', async () => {
-  const server = app.listen(0);
-  const res = await request(server).get('/items');
-  server.close();
+  const res = await request(app).get('/items');
   expect(res.status).toBe(200);
   expect(Array.isArray(res.body)).toBe(true);
   expect(res.headers['content-type']).toMatch(/json/);
@@ -1037,13 +1154,11 @@ Add a test for your POST route that creates a new record. Test that it returns s
 
 Show Me: POST route test
 
-```ts
+```js
 it('creates a new item', async () => {
-  const server = app.listen(0);
-  const response = await request(server)
+  const response = await request(app)
     .post('/items')
     .send({ title: 'Test Notebook', price: 6.99 });
-  server.close();
   expect(response.status).toBe(201);
   expect(response.body).toMatchObject({ title: 'Test Notebook', price: 6.99 });
   expect(response.body.id).toBeDefined();
@@ -1126,18 +1241,18 @@ Deploy your Express server to Render so it's accessible on the internet. This al
 Show Me: Render deployment configuration
 
 ```js
-// src/index.js or src/app.js
-import express from 'express';
+// src/index.js
+import app from './app.js';
 
-const app = express();
+// Use Render's PORT environment variable, or default to 3000 for local development
 const PORT = process.env.PORT || 3000;
-
-// ... your routes ...
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 ```
+
+**Note:** Since you've already refactored your app in Level 31, your `src/index.js` should already have the PORT setup. Just make sure it uses `process.env.PORT || 3000` so Render can set the port dynamically.
 
 6. Deploy and test your live API endpoints using the URL Render provides (e.g., `https://your-app.onrender.com`)
 

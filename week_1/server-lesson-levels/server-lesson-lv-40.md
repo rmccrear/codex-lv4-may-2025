@@ -18,19 +18,19 @@ Deploy your Express server to Render so it's accessible on the internet. This al
 <details>
 <summary>Show Me: Render deployment configuration</summary>
 <pre><code class="language-js">
-// src/index.js or src/app.js
-import express from 'express';
+// src/index.js
+import app from './app.js';
 
-const app = express();
+// Use Render's PORT environment variable, or default to 3000 for local development
 const PORT = process.env.PORT || 3000;
-
-// ... your routes ...
 
 app.listen(PORT, () =&gt; {
   console.log(`Server running on port ${PORT}`);
 });
 </code></pre>
 </details>
+
+**Note:** Since you've already refactored your app in Level 31, your `src/index.js` should already have the PORT setup. Just make sure it uses `process.env.PORT || 3000` so Render can set the port dynamically.
 
 6. Deploy and test your live API endpoints using the URL Render provides (e.g., `https://your-app.onrender.com`)
 

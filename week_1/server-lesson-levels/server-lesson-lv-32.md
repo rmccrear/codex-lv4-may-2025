@@ -7,21 +7,19 @@ Set up Vitest and Supertest to test your Express routes. Start with a simple tes
 **Setup:**
 1. Install testing dependencies: `npm install -D vitest supertest @vitest/coverage-v8`
 2. Create a `tests` directory in the root of your project.
-3. Export your Express app from `src/app.ts` (or `src/index.js`) so it can be imported in tests
+3. **Make sure you've completed Level 31**: Your Express app should already be exported from `src/app.js` (if you haven't done the refactor yet, go back to Level 31 first)
 
 <details>
 <summary>Show Me: basic test setup and Hello Express test</summary>
-<pre><code class="language-ts">
-// tests/routes/app.test.ts
+<pre><code class="language-js">
+// tests/routes/app.test.js
 import { describe, it, expect } from 'vitest';
 import request from 'supertest';
-import app from '../../src/app';
+import app from '../../src/app.js';
 
 describe('Server Routes', () =&gt; {
   it('serves HTML from root route', async () =&gt; {
-    const server = app.listen(0);
-    const res = await request(server).get('/');
-    server.close();
+    const res = await request(app).get('/');
     expect(res.status).toBe(200);
     expect(res.text).toContain('&lt;h1&gt;Hello Express!&lt;/h1&gt;');
     expect(res.headers['content-type']).toMatch(/html/);
@@ -29,3 +27,7 @@ describe('Server Routes', () =&gt; {
 });
 </code></pre>
 </details>
+
+**Notes:**
+- **No `listen()` needed**: Supertest can work directly with your Express app—you don't need to call `app.listen()`. Supertest handles the server setup internally when you pass the app directly to `request()`.
+- **`await` is required**: Supertest returns a Promise, so you need `await` when using `async/await` syntax to get the response object. Without `await`, `res` would be a Promise instead of the response, and your assertions wouldn't work.

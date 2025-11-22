@@ -6,11 +6,9 @@ Add a test for one of your GET routes that returns JSON data (e.g., `GET /items`
 
 <details>
 <summary>Show Me: GET JSON route test</summary>
-<pre><code class="language-ts">
+<pre><code class="language-js">
 it('returns seeded items array', async () =&gt; {
-  const server = app.listen(0);
-  const res = await request(server).get('/items');
-  server.close();
+  const res = await request(app).get('/items');
   expect(res.status).toBe(200);
   expect(Array.isArray(res.body)).toBe(true);
   expect(res.headers['content-type']).toMatch(/json/);
