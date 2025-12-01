@@ -9,9 +9,21 @@
 
 This course contains **9 weeks** (including 1 break week) with a total of **37 activities**.
 
+Weekly Topics:
+- Week 1: Express & REST API Basics
+- Week 2: JavaScript Fundamentals & Holiday Week
+- Week 3: Supabase Integration & CRUD
+- Week 4: Backend Practice & CRUD Mastery
+- Week 5: Backend Expansion & Interview Prep
+- Week 6: Advanced Backend Exercises
+- Week 7: Advanced Patterns & Interview
+- Week 8: Pre-Capstone Consolidation
+- Week 9: Capstone Project & Evaluation
+
 ## Course Structure
 
 ### [Week 1](week_1/README.md)
+#### Topic: Express & REST API Basics
 
   - **Activities:** 3
 
@@ -21,6 +33,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [RESTful Express API with CRUD Operations (graded)](week_1/Assignment_04_Week_1_Day_4_Assignment_graded.md) (assignment)
 
 ### [Week 2](week_2/README.md)
+#### Topic: JavaScript Fundamentals & Holiday Week
 
   - **Activities:** 2
 
@@ -29,6 +42,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Learn JavaScript Online - Free Practice](week_2/Assignment_00_Learn_JavaScript_Online.md) (assignment)
 
 ### [Week 3](week_3/README.md)
+#### Topic: Supabase Integration & CRUD
 
   - **Activities:** 5
 
@@ -40,6 +54,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Badge Interview Week 3](week_3/Assignment_04_Badge_Interview_Week_3.md) (assignment)
 
 ### [Week 4](week_4/README.md)
+#### Topic: Backend Practice & CRUD Mastery
 
   - **Activities:** 5
 
@@ -51,6 +66,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Week 4 - Day 5 Assignment (graded)](week_4/Assignment_04_Week_3_Day_5_Assignment_graded.md) (assignment)
 
 ### [Week 5](week_5/README.md)
+#### Topic: Backend Expansion & Interview Prep
 
   - **Activities:** 5
 
@@ -62,6 +78,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Badge Interview Week 5](week_5/Assignment_04_Badge_Interview_Week_4.md) (assignment)
 
 ### [Week 6](week_6/README.md)
+#### Topic: Advanced Backend Exercises
 
   - **Activities:** 5
 
@@ -73,6 +90,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Week 6 - Day 5 Assignment (graded)](week_6/Assignment_04_Week_5_Day_5_Assignment_graded.md) (assignment)
 
 ### [Week 7](week_7/README.md)
+#### Topic: Advanced Patterns & Interview
 
   - **Activities:** 5
 
@@ -84,6 +102,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Badge Interview Week 7](week_7/Assignment_04_Badge_Interview_Week_6.md) (assignment)
 
 ### [Week 8](week_8/README.md)
+#### Topic: Pre-Capstone Consolidation
 
   - **Activities:** 5
 
@@ -95,6 +114,7 @@ This course contains **9 weeks** (including 1 break week) with a total of **37 a
   - [Week 8 - Day 5 Assignment (graded)](week_8/Assignment_04_Week_7_Day_5_Assignment_graded.md) (assignment)
 
 ### [Week 9](week_9/README.md)
+#### Topic: Capstone Project & Evaluation
 
   - **Activities:** 2
 
