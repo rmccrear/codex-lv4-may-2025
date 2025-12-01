@@ -77,4 +77,4 @@ export default function Toggle() {
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**

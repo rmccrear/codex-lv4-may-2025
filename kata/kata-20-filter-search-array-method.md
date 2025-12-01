@@ -80,7 +80,7 @@ export default function SearchNamesArrayMethod() {
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**
 
 
 

@@ -105,4 +105,4 @@ Try:
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**

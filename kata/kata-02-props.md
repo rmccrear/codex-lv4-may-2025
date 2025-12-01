@@ -42,4 +42,4 @@ Use **destructuring** to extract the `name` prop.
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**

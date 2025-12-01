@@ -37,4 +37,4 @@ When rendered, it should display:
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**

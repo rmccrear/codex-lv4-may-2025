@@ -152,5 +152,5 @@ Try modifying your `transformPokemon` function to include or exclude different p
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**
 

@@ -112,6 +112,6 @@ Why? `useEffect` expects its callback to return either nothing or a cleanup func
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**
 
 

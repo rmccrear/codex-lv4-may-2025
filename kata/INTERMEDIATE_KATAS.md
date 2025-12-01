@@ -15,5 +15,5 @@ These intermediate katas focus on integrating with APIs using async/await and th
 
 ---
 
-**← [Back to Kata Index](./README.md)**
+**← [Back to Kata Index](./)**
 
