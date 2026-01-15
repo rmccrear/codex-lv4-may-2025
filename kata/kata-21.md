@@ -100,10 +100,11 @@ export default router;
 
 <details>
 <summary>Click to reveal solution</summary>
+<div>
+`index.js`
+</div>
 
-### `index.js`
-
-```js
+<pre class="highlight">
 import express from 'express';
 import fruitsRouter from './routes/fruits.js';
 
@@ -115,13 +116,14 @@ app.use('/fruits', fruitsRouter);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-```
+</pre>
 
 ---
 
-### `routes/fruits.js`
-
-```js
+<p>
+  `routes/fruits.js`
+</p>
+<pre class="highlight">
 import express from 'express';
 
 const router = express.Router();
@@ -138,7 +140,7 @@ router.get('/', (req, res) => {
 });
 
 export default router;
-```
+</pre>
 
 </details>
 
