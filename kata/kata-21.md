@@ -96,6 +96,12 @@ export default router;
 
 ---
 
+## Setup Hints
+
+Start by creating a new project folder and running `npm init -y` to generate a basic `package.json`. Install Express with `npm install express`, then install Nodemon as a development dependency using `npm install --save-dev nodemon` so your server automatically restarts when files change. In your `package.json`, add `"type": "module"` to enable ES module syntax (`import` / `export`) instead of `require`. Also add a dev script like `"dev": "nodemon index.js"` so you can start the server with `npm run dev`. Once this is set up, you’re ready to create `index.js` and the `routes/fruits.js` file and start building your Express app.
+
+---
+
 ## Solution
 
 <details>
